@@ -63,6 +63,7 @@ To generate and open the report, use the Allure command-line tool:
 Bash
 
 allure serve allure-results
+
 This command will generate the report and automatically open it in your default browser.
 
 <img width="2530" height="1070" alt="image" src="https://github.com/user-attachments/assets/544de91e-d82e-47e2-946e-438080398a25" />
