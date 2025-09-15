@@ -38,11 +38,14 @@ Regression Profile: Use this profile to run the complete suite of regression tes
 Bash
 
 mvn test -PRegression
-Validation Profile: This profile is for a specific set of validation tests. Note that these tests are designed to deliberately fail to showcase certain scenarios.
+
+Validation Profile: This profile is for a specific set of validation tests.
+
+Note that these tests are designed to deliberately fail to showcase certain scenarios.
 
 Bash
-
-mvn test -PValidation
+   ```bash
+    mvn test -PValidation```
 
 🚀 What's Next
 Here's a look at the future plans for this project:
