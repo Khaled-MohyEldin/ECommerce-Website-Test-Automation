@@ -19,8 +19,7 @@ A web browser for testing (e.g., Chrome, Firefox, Edge).
 
 The corresponding Selenium WebDriver for your chosen browser.
 
-Installation\ 
-
+Installation  
 1- Clone the repository:  
     ```git clone https://github.com/your-username/EndtoEnd-ECommerce.git```
 
@@ -41,10 +40,9 @@ Validation Profile: This profile is for a specific set of validation tests.
 
 Note that these tests are designed to deliberately fail to showcase certain scenarios.
 
-Bash
-   ```bash
-    mvn test -PValidation
-```
+Bash  
+   ```mvn test -PValidation```  
+
 🚀 What's Next
 Here's a look at the future plans for this project:
 
@@ -61,9 +59,8 @@ After running the tests, an allure-results directory will be generated.
 
 To generate and open the report, use the Allure command-line tool:
 
-Bash
-
-allure serve allure-results
+Bash  
+ ```allure serve allure-results```
 
 This command will generate the report and automatically open it in your default browser.
 
