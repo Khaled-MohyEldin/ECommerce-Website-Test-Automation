@@ -7,26 +7,14 @@
   <artifactId>Central</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>Central</name>
-  <!-- FIXME change it to the project's website -->
+  <name>Website Test Automation</name>
+  <!-- https://github.com/Khaled-MohyEldin/ECommerce-Website-Test-Automation/tree/master -->
   <url>http://www.example.com</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.release>17</maven.compiler.release>
   </properties>
-
-<!--  <dependencyManagement>-->
-<!--    <dependencies>-->
-<!--      <dependency>-->
-<!--        <groupId>org.junit</groupId>-->
-<!--        <artifactId>junit-bom</artifactId>-->
-<!--        <version>5.11.0</version>-->
-<!--        <type>pom</type>-->
-<!--        <scope>import</scope>-->
-<!--      </dependency>-->
-<!--    </dependencies>-->
-<!--  </dependencyManagement>-->
 
   <dependencies>
       <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->

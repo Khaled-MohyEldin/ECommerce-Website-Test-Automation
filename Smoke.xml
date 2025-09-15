@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="MyTestSuite" verbose="1" >
+
+<!--    <parameter name="url" value="value of url"/>-->
+
+<!--    <groups>-->
+<!--        <run>-->
+<!--            <include name="" />-->
+<!--        </run>-->
+<!--    </groups>-->
+
+    <listeners>
+        <listener class-name="TestComp.Listeners" />
+    </listeners>
+
+    <test name="MyTests">
+        <classes>
+            <class name="Tests.ErrorValidationTest"/>
+        </classes>
+    </test>
+</suite>

@@ -1,3 +1,5 @@
+package Tests;
+
 import PageObjects.ProductCatalogue;
 import TestComp.BaseTest;
 import org.testng.Assert;

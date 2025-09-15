@@ -1,4 +1,5 @@
-import PageObjects.*;
+package Tests;
+
 import TestComp.BaseTest;
 import io.qameta.allure.Allure;
 import org.testng.Assert;
@@ -48,15 +49,8 @@ public class AllSenario extends BaseTest {
         try { list = getJsonData("PurchaseOrder.json");
         } catch (IOException e) { throw new RuntimeException(e);}
 
-        return new Object[][]{{list.get(0)}, {list.get(1)}};
+        return new Object[][]{ {list.get(0)}, {list.get(1)} };
     }
 
 }
 
-
-
-//    @DataProvider
-//    public Object[][] getData(){
-//        return new Object[][] { {"one@two.com", "1&twoThree", new String[]{"IPHONE", "ZARA"}},
-//                {"two@one.com", "2@oneThree", new String[]{"ADIDAS"}}};
-//    }
