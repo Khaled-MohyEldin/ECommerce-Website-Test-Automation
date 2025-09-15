@@ -22,12 +22,10 @@ The corresponding Selenium WebDriver for your chosen browser.
 Installation
 
 1- Clone the repository: 
-git clone https://github.com/your-username/EndtoEnd-ECommerce.git
-cd EndtoEnd-ECommerce
+```git clone https://github.com/your-username/EndtoEnd-ECommerce.git```
 
-
-2- Install dependencies: 
-    mvn clean install
+2- Install dependencies:
+    ```mvn clean install```
 
     
 ⚙️ Running Test Profiles
@@ -36,8 +34,8 @@ This project uses Maven profiles to run different test suites. This allows you t
 Regression Profile: Use this profile to run the complete suite of regression tests.
 
 Bash
-
-mvn test -PRegression
+    ```bash
+    mvn test -PRegression```
 
 Validation Profile: This profile is for a specific set of validation tests.
 
@@ -45,8 +43,8 @@ Note that these tests are designed to deliberately fail to showcase certain scen
 
 Bash
    ```bash
-    mvn test -PValidation```
-
+    mvn test -PValidation
+```
 🚀 What's Next
 Here's a look at the future plans for this project:
 
