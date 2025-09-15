@@ -21,10 +21,10 @@ The corresponding Selenium WebDriver for your chosen browser.
 
 Installation\ 
 
-1- Clone the repository:\ 
-```git clone https://github.com/your-username/EndtoEnd-ECommerce.git```
+1- Clone the repository:  
+    ```git clone https://github.com/your-username/EndtoEnd-ECommerce.git```
 
-2- Install dependencies:\ 
+2- Install dependencies:  
     ```mvn clean install```
 
     
