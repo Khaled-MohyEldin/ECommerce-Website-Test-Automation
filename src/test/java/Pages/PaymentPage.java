@@ -1,6 +1,7 @@
 package Pages;
 
 import Utilities.Reusables;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,20 +14,16 @@ public class PaymentPage extends Reusables {
     public PaymentPage(WebDriver driver) {
         super(driver);
         this.driver = driver;
-        PageFactory.initElements(driver,this);
     }
 
-    @FindBy(css=".ta-results span")
-    List<WebElement> options;
 
-    @FindBy(css=".form-group .text-validated")
-    WebElement countryText;
-
-    @FindBy(css=".action__submit")
-    WebElement placeOrderBtn;
+    private final By optionsLoc = By.cssSelector(".ta-results span");
+    private final By countryTextLoc = By.cssSelector(".form-group .text-validated");
+    private final By placeOrderBtnLoc = By.cssSelector(".action__submit");
 
     public void selectCountry(String cntrySrch){
-        countryText.sendKeys(cntrySrch);
+        driver.findElement(countryTextLoc).sendKeys(cntrySrch);
+        List<WebElement> options = driver.findElements(optionsLoc);
         for (WebElement option : options) {
             if(option.getText().contains(cntrySrch)){
                 option.click(); break;}
@@ -34,9 +31,8 @@ public class PaymentPage extends Reusables {
     }
 
     public Dashboard placeOrder() {
-        placeOrderBtn.click();
+        driver.findElement(placeOrderBtnLoc).click();
         handleOverlay();
-        Dashboard dash = new Dashboard(driver);
-        return dash;
+        return new Dashboard(driver);
     }
 }

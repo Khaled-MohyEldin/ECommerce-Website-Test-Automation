@@ -1,31 +1,26 @@
 package Pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
-
 
 public class Dashboard {
     private WebDriver driver;
     public Dashboard(WebDriver driver) {
         this.driver = driver;
-        PageFactory.initElements(driver,this);
     }
 
-    @FindBy(css=".em-spacer-1 .ng-star-inserted")
-    List<WebElement> ProductIDs;
-
-    @FindBy(css=".hero-primary")
-    WebElement message;
+    private final By ProductIDLoc = By.cssSelector(".em-spacer-1 .ng-star-inserted");
+    private final By messageLoc = By.cssSelector(".hero-primary");
 
     public List<String> getProductIDs(){
+        List<WebElement> ProductIDs = driver.findElements(ProductIDLoc);
         return ProductIDs.stream().map(WebElement::getText).toList();
     }
 
     public String getMsg(){
-        return message.getText();
+        return driver.findElement(messageLoc).getText();
     }
 }

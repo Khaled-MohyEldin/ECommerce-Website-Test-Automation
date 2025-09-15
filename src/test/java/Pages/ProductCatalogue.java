@@ -14,7 +14,6 @@ public class ProductCatalogue extends Reusables {
     public ProductCatalogue(WebDriver driver) {
         super(driver);
         this.driver = driver;
-        PageFactory.initElements(driver, this);
     }
 
     private final By itemsLoc = By.cssSelector(".card .card-body");
@@ -24,7 +23,7 @@ public class ProductCatalogue extends Reusables {
         return driver.findElements(itemsLoc);
     }
 
-    public void addingItems(String[] srchItems) {
+    public void addingItems(List<String> srchItems) {
         List<WebElement> items = driver.findElements(itemsLoc);
         for (String srch : srchItems) {
             WebElement item = items.stream().filter(s -> s.getText().contains(srch)).
@@ -34,7 +33,5 @@ public class ProductCatalogue extends Reusables {
             handleOverlay();
         }
     }
-
-
 
 }

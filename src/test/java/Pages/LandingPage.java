@@ -1,36 +1,30 @@
 package Pages;
 
 import Utilities.Reusables;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 public class LandingPage extends Reusables {
+
     private WebDriver driver;
     public LandingPage(WebDriver driver) {
         super(driver);
         this.driver = driver;
-        PageFactory.initElements(driver,this);
     }
 
-    @FindBy(id="userEmail")
-    WebElement userEmail;
+    private final By userEmailLoc = By.id("userEmail");
+    private final By userPassLoc = By.id("userPassword");
+    private final By loginBtnLoc = By.id("login");
 
-    @FindBy(id="userPassword")
-    WebElement userPass;
+    public ProductCatalogue loginApp(String email, String pass){
+        driver.findElement(userEmailLoc).sendKeys(email);
+        driver.findElement(userPassLoc).sendKeys(pass);
+        driver.findElement(loginBtnLoc).click();
 
-    @FindBy(id="login")
-    WebElement loginBtn;
-
-    public ProductCatalogue loginApp (String email, String pass){
-        userEmail.sendKeys(email);
-        userPass.sendKeys(pass);
-        loginBtn.click();
         super.handleOverlay();
-        ProductCatalogue products = new ProductCatalogue(driver);
-        return products;
+        return new ProductCatalogue(driver);
     }
+
     public void goTo(){
         driver.get("https://rahulshettyacademy.com/client");
     }

@@ -2,6 +2,7 @@ package TestComp;
 
 import Pages.LandingPage;
 import Utilities.DriverFactory;
+import Utilities.TestData;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.qameta.allure.Allure;
@@ -81,42 +82,12 @@ public class BaseTest {
         driver.close();
     }
 
-    public List<HashMap<Object, Object>> getJsonData(String fileName) throws IOException {
+    public List<TestData> getJsonData(String fileName) throws IOException {
         //using Jackson Databind Library
         InputStream inputStream = getClass().getClassLoader().getResourceAsStream(fileName);
         ObjectMapper mapper = new ObjectMapper();
-        return mapper.readValue(inputStream, new TypeReference<List<HashMap<Object, Object>>>() {
-        });
+        return mapper.readValue(inputStream, new TypeReference< List<TestData> > () {});
 
     }
-
-    /*
-    public String takeScreenShot(String testCaseName, WebDriver driver) throws IOException {
-        // this method is taking screenshot and returning a path into your local system
-        //Cast you driver into TakesScreenShot
-        TakesScreenshot ts = (TakesScreenshot) driver;
-        File source = ts.getScreenshotAs(OutputType.FILE);
-        File file = new File(System.getProperty("user.dir") + "//Reports//" + testCaseName + ".png");
-        FileUtils.copyFile(source, file);
-        return System.getProperty("user.dir") + "//Reports//" + testCaseName + ".png";
-    }
-
-    @Attachment
-    public byte[] saveFailureScreenShot(WebDriver driver) {
-        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-    }
-
-    public void attachScreenshot(WebDriver driver, String attachmentName) {
-        try {
-            byte[] screenshotBytes = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-            // Attach the screenshot using Allure.addAttachment
-            Allure.addAttachment(attachmentName,
-                    "image/png", new ByteArrayInputStream(screenshotBytes), ".png");
-        } catch (Exception e) {
-            System.out.println("Could not capture and attach screenshot: " + e.getMessage());
-        }
-    }
-
-     */
 
 }

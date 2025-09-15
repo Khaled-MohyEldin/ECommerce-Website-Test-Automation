@@ -1,5 +1,6 @@
 package Pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,26 +17,21 @@ public class CartPage {
         PageFactory.initElements(driver,this);
     }
 
-    @FindBy(css=".cart h3")
-    List<WebElement> cartList;
+    private final By cartListLoc = By.cssSelector(".cart h3");
+    private final By checkOutBtnLoc = By.cssSelector(".subtotal .btn");
 
-    @FindBy(css=".subtotal .btn")
-    WebElement checkOutBtn;
+    public boolean cartOk (List<String> srchItems){
 
-    public List<WebElement> getCartList(){
-        return this.cartList;
-    }
-
-    public boolean cartOk (String[] srchItems){
-        return cartList.stream().map(WebElement::getText)
-                .allMatch(sourceItem -> Arrays.stream(srchItems).anyMatch(sourceItem::contains));
+        List<WebElement> cartList = driver.findElements(cartListLoc);
+        return cartList.stream()
+                .map(WebElement::getText)
+                .allMatch(sourceItem -> srchItems.stream()
+                .anyMatch(sourceItem::contains));
     }
 
     public PaymentPage chckout(){
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("document.body.style.zoom='80%'");
-        checkOutBtn.click();
-        PaymentPage payment = new PaymentPage(driver);
-        return payment;
+        ((JavascriptExecutor) driver).executeScript("document.body.style.zoom='80%'");
+        driver.findElement(checkOutBtnLoc).click();
+        return  new PaymentPage(driver);
     }
 }

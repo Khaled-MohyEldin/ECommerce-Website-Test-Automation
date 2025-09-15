@@ -2,11 +2,13 @@
   {
     "email": "one@two.com",
     "pass": "1&twoThree",
+    "country" : "Egypt",
     "products": ["IPHONE","ZARA"]
   },
   {
     "email":"two@one.com",
     "pass": "2@oneThree",
+    "country" : "India",
     "products": ["ADIDAS"]
   }
 ]
