@@ -11,33 +11,37 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class Reusables {
-    WebDriver driver;
+
+    private WebDriver driver;
     public Reusables(WebDriver driver){
         this.driver = driver;
     }
 
-    @FindBy(css=".fa-home")
-    WebElement homeBtn;
+    private final By orderBtn = By.cssSelector(".fa-handshake-o");
+    private final By cartBtn = By.cssSelector(".fa-shopping-cart");
+    private final By homeBtn = By.cssSelector(".fa-home");
+    private final By signOut = By.cssSelector(".fa-sign-out");
 
-    @FindBy(css=".fa-handshake-o")
-    WebElement ordersBtn;
+    public void goHomePage(){
+        driver.findElement(homeBtn).click();
+    }
 
-    @FindBy(css=".fa-shopping-cart")
-    WebElement cartBtn;
+    public void goToOrdersPage(){
+        driver.findElement(orderBtn).click();
+    }
 
-    @FindBy(css=".fa-sign-out")
-    WebElement signOutBtn;
+    public void signOut(){
+        driver.findElement(signOut).click();
+    }
 
-    public void goHomePage(){ homeBtn.click(); }
-    public void goToOrdersPage(){ ordersBtn.click(); }
-    public void signOut(){ signOutBtn.click(); }
     public CartPage goToCartPage(){
-        cartBtn.click();
+        driver.findElement(cartBtn).click();
         CartPage cartPage = new CartPage(driver);
         return cartPage;
     }
 
     public void handleOverlay() {
+        WebDriver driver = DriverFactory.getDriver();
         By toastContainer = By.id("toast-container");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(toastContainer));

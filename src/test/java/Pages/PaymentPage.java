@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 
 public class PaymentPage extends Reusables {
-    WebDriver driver;
+    private WebDriver driver;
     public PaymentPage(WebDriver driver) {
         super(driver);
         this.driver = driver;

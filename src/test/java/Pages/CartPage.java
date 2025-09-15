@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class CartPage {
-    WebDriver driver;
+    private WebDriver driver;
     public CartPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver,this);

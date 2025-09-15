@@ -36,7 +36,6 @@ public class BaseTest {
     public WebDriver initializeDriver() throws IOException {
         //setUp global Properties
         Properties prop = new Properties();
-
         inputStream = getClass().getResourceAsStream("/GlobalData.properties");
         prop.load(inputStream);
 
@@ -91,6 +90,7 @@ public class BaseTest {
 
     }
 
+    /*
     public String takeScreenShot(String testCaseName, WebDriver driver) throws IOException {
         // this method is taking screenshot and returning a path into your local system
         //Cast you driver into TakesScreenShot
@@ -116,5 +116,7 @@ public class BaseTest {
             System.out.println("Could not capture and attach screenshot: " + e.getMessage());
         }
     }
+
+     */
 
 }

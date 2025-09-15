@@ -10,30 +10,28 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 
 public class ProductCatalogue extends Reusables {
-    WebDriver driver;
-
+    private WebDriver driver;
     public ProductCatalogue(WebDriver driver) {
         super(driver);
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(css = ".card .card-body")
-    List<WebElement> items;
-
+    private final By itemsLoc = By.cssSelector(".card .card-body");
+    private final By addItem = By.cssSelector(".fa-shopping-cart");
 
     public List<WebElement> getItems() {
-        return this.items;
+        return driver.findElements(itemsLoc);
     }
 
     public void addingItems(String[] srchItems) {
-        By addItem = By.cssSelector(".fa-shopping-cart");
+        List<WebElement> items = driver.findElements(itemsLoc);
         for (String srch : srchItems) {
-            WebElement item = this.items.stream().filter(s -> s.getText().contains(srch)).
+            WebElement item = items.stream().filter(s -> s.getText().contains(srch)).
                     findFirst().orElse(null);
             assert item != null;
             item.findElement(addItem).click();
-            super.handleOverlay();
+            handleOverlay();
         }
     }
 

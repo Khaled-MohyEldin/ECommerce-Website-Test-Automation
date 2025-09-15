@@ -9,7 +9,7 @@ import java.util.List;
 
 
 public class Dashboard {
-    WebDriver driver;
+    private WebDriver driver;
     public Dashboard(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver,this);
