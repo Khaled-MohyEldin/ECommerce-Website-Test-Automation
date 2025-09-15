@@ -1,10 +1,15 @@
 package Tests;
 
+import Pages.CartPage;
+import Pages.Dashboard;
+import Pages.PaymentPage;
+import Pages.ProductCatalogue;
 import TestComp.BaseTest;
 import io.qameta.allure.Allure;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
