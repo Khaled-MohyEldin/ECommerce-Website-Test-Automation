@@ -1,23 +1,17 @@
-EndtoEnd-ECommerce
+EndtoEnd-ECommerce  
 
-📝 Project Description
+📝 Project Description  
+This project provides an automated end-to-end testing suite for an e-commerce website. The tests are designed to simulate real user journeys, such as browsing products, adding items to the cart, and completing the checkout process. We use Selenium WebDriver to interact with the web elements and ensure that critical functionalities work as expected from a user's perspective.  
 
-This project provides an automated end-to-end testing suite for an e-commerce website. The tests are designed to simulate real user journeys, such as browsing products, adding items to the cart, and completing the checkout process. We use Selenium WebDriver to interact with the web elements and ensure that critical functionalities work as expected from a user's perspective.
-
-🚀 Getting Started
-
+🚀 Getting Started  
 These instructions will get a copy of the project up and running on your local machine for development and testing purposes.
 
-Prerequisites
-You'll need to have the following installed on your system:
-
-Java Development Kit (JDK): Version 1.8 or higher.
-
-Maven: To manage project dependencies.
-
-A web browser for testing (e.g., Chrome, Firefox, Edge).
-
-The corresponding Selenium WebDriver for your chosen browser.
+Prerequisites  
+You'll need to have the following installed on your system:  
+Java Development Kit (JDK): Version 1.8 or higher.  
+Maven: To manage project dependencies.  
+A web browser for testing (e.g., Chrome, Firefox, Edge).  
+The corresponding Selenium WebDriver for your chosen browser.  
 
 Installation  
 1- Clone the repository:  
@@ -32,9 +26,8 @@ This project uses Maven profiles to run different test suites. This allows you t
 
 Regression Profile: Use this profile to run the complete suite of regression tests.
 
-Bash
-    ```bash
-    mvn test -PRegression```
+Bash  
+    ```mvn test -PRegression```
 
 Validation Profile: This profile is for a specific set of validation tests.
 
@@ -44,17 +37,16 @@ Bash
    ```mvn test -PValidation```  
 
 🚀 What's Next
-Here's a look at the future plans for this project:
 
-Expand Negative Test Scenarios: We will add more negative tests and create dedicated profiles to validate a wider range of failure conditions.
+Here's a look at the future plans for this project:  
+Expand Negative Test Scenarios: We will add more negative tests and create dedicated profiles to validate a wider range of failure conditions.  
+Integrate API Testing: We plan to add API tests to verify that orders and other critical data are correctly registered in the backend database.  
 
-Integrate API Testing: We plan to add API tests to verify that orders and other critical data are correctly registered in the backend database.
+📊 Allure Reporting  
+This project uses Allure Report to generate comprehensive, interactive test reports.  
+Allure provides a clear overview of test execution, including pass/fail rates, detailed steps for each test, and screenshots on failure.
 
-
-📊 Allure Reporting
-This project uses Allure Report to generate comprehensive, interactive test reports. Allure provides a clear overview of test execution, including pass/fail rates, detailed steps for each test, and screenshots on failure.
-
-Generating the Report
+Generating the Report  
 After running the tests, an allure-results directory will be generated.
 
 To generate and open the report, use the Allure command-line tool:
