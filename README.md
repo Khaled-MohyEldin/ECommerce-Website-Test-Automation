@@ -15,7 +15,7 @@ The corresponding Selenium WebDriver for your chosen browser.
 
 ## Installation  
 1- Clone the repository:  
-    ```git clone https://github.com/your-username/EndtoEnd-ECommerce.git```
+    ```git clone https://github.com/Khaled-MohyEldin/ECommerce-Website-Test-Automation.git```
 
 2- Install dependencies:  
     ```mvn clean install```
