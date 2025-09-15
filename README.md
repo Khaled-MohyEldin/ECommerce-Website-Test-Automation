@@ -19,12 +19,12 @@ A web browser for testing (e.g., Chrome, Firefox, Edge).
 
 The corresponding Selenium WebDriver for your chosen browser.
 
-Installation
+Installation\ 
 
-1- Clone the repository: 
+1- Clone the repository:\ 
 ```git clone https://github.com/your-username/EndtoEnd-ECommerce.git```
 
-2- Install dependencies:
+2- Install dependencies:\ 
     ```mvn clean install```
 
     
