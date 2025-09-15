@@ -1,4 +1,4 @@
-EndtoEnd-ECommerce  
+EndtoEnd-ECommerce Website Test Automation
 
 📝 Project Description  
 This project provides an automated end-to-end testing suite for an e-commerce website. The tests are designed to simulate real user journeys, such as browsing products, adding items to the cart, and completing the checkout process. We use Selenium WebDriver to interact with the web elements and ensure that critical functionalities work as expected from a user's perspective.  
