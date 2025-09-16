@@ -18,18 +18,18 @@ public class AllSenario extends BaseTest {
     @Test(dataProvider = "getData")
     public void EndtoEnd(TestData data) {
 
-        //just enter credentials and login
+        //Entering credentials and login
         ProductCatalogue products = landingPage.loginApp(data.getEmail(), data.getPass());
 
         //Search for Item and add to cart
         products.addingItems(data.getProducts());
-        CartPage cartPage = products.goToCartPage();
+        CartPage cartPage = products.header.goToCartPage();
 
-        //check every product is what we chosen and then click checkout
+        //check every product is what we have chosen and then click checkout
         Assert.assertTrue(cartPage.cartOk(data.getProducts()));
         PaymentPage payment = cartPage.chckout();
 
-        //click on Select country filed
+        //Select country from a suggestion list
         payment.selectCountry(data.getCountry());
         Dashboard dash = payment.placeOrder();
 
@@ -37,8 +37,7 @@ public class AllSenario extends BaseTest {
         System.out.println(dash.getProductIDs());
         Assert.assertTrue(dash.getMsg().equalsIgnoreCase("THANKYOU FOR THE ORDER."));
         //SignOut
-        products.signOut();
-
+        products.header.signOut();
     }
 
     // Reading from Json file

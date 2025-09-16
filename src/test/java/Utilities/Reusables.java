@@ -16,7 +16,7 @@ public class Reusables {
     public Reusables(WebDriver driver){
         this.driver = driver;
     }
-
+    /*
     private final By orderBtn = By.cssSelector(".fa-handshake-o");
     private final By cartBtn = By.cssSelector(".fa-shopping-cart");
     private final By homeBtn = By.cssSelector(".fa-home");
@@ -39,7 +39,7 @@ public class Reusables {
         CartPage cartPage = new CartPage(driver);
         return cartPage;
     }
-
+    */
     public void handleOverlay() {
         WebDriver driver = DriverFactory.getDriver();
         By toastContainer = By.id("toast-container");

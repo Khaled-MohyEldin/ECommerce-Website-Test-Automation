@@ -11,9 +11,11 @@ import java.util.List;
 
 public class ProductCatalogue extends Reusables {
     private WebDriver driver;
+    public Header header;
     public ProductCatalogue(WebDriver driver) {
         super(driver);
         this.driver = driver;
+        this.header = new Header(driver);
     }
 
     private final By itemsLoc = By.cssSelector(".card .card-body");
